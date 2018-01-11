@@ -1,10 +1,3 @@
-/*
- * 과목 : 포로그램설계방법론
- * 전공 : 컴퓨터 공학과
- * 학번 : 2012036837
- * 수업 : 월요일 2시 30분
- * 이름 : 박진혁
- */
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Container;
@@ -69,9 +62,9 @@ class AdjustFrame extends JFrame implements ActionListener{
 	String kind;
 	InfoManager infomg;
 	int infonum;
-	
+
 	Container contentPane;
-	
+
 	public AdjustFrame(InfoManager infog, int infonum){      //수정GUI
 		infomg = infog;
 		id = infomg.id;
@@ -143,7 +136,7 @@ class AdjustFrame extends JFrame implements ActionListener{
 		group.add(rbMan);
 		group.add(rbWoman);
 		pGender.add(rbMan);
-		pGender.add(rbWoman);      
+		pGender.add(rbWoman);
 		gbAdd(bGender, 0,5,1,1);
 		gbAdd(pGender,1,5,3,1);
 		//혈액형
@@ -190,7 +183,7 @@ class AdjustFrame extends JFrame implements ActionListener{
 		//빈칸
 		JPanel blank = new JPanel();
 		jobkind.add("---",blank);
-		
+
 		//하는일
 		JLabel some = new JLabel("하는일 : ");
 		sometext = new JTextField(20);
@@ -228,7 +221,7 @@ class AdjustFrame extends JFrame implements ActionListener{
 		comp.add("North", c);
 		comp.add("South", d);
 		jobkind.add("직장인",comp);
-		
+
 		if(infog.infolist.get(infonum).get_job().equals("일반인")){
 			sometext.setText(infog.infolist.get(infonum).get_thing());
 		}else if(infog.infolist.get(infonum).get_job().equals("학생")){
@@ -247,7 +240,7 @@ class AdjustFrame extends JFrame implements ActionListener{
 		pButton.add(btnInsert);
 		pButton.add(cancel);
 		gbAdd(pButton,0,10,4,1);
-		
+
 		setSize(400,400);
 		setVisible(true);
 	}
@@ -273,7 +266,7 @@ class AdjustFrame extends JFrame implements ActionListener{
 						JOptionPane.ERROR_MESSAGE);
 				return true;
 			}
-		} 
+		}
 		return false;
 	}
 	public void warning(String text){			//오류 메시지 출력

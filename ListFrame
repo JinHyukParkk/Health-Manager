@@ -1,10 +1,3 @@
-/*
- * 과목 : 포로그램설계방법론
- * 전공 : 컴퓨터 공학과
- * 학번 : 2012036837
- * 수업 : 월요일 2시 30분
- * 이름 : 박진혁
- */
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -60,8 +53,8 @@ class ListFrame extends JFrame implements ActionListener{
 	private JScrollPane tableScroll8;
 	JButton ok;
 	InfoManager infomg;
-	
-	
+
+
 	public void savetable(String id, String text, DefaultTableModel model){
 		String row[][] = new String[infomg.heallist.size()][2];
 		int count = 0;
@@ -86,7 +79,7 @@ class ListFrame extends JFrame implements ActionListener{
 		infomg = temp_infomg;
 		setTitle("무술별 인원 리스트");
 		setLayout(new BorderLayout());
-		
+
 		JPanel totalskill = new JPanel(new GridLayout(1,9));
 		JLabel skill = new JLabel("복싱");
 		JLabel skill1 = new JLabel("무에타이");
@@ -106,7 +99,7 @@ class ListFrame extends JFrame implements ActionListener{
 		skill6.setHorizontalAlignment(JLabel.CENTER);
 		skill7.setHorizontalAlignment(JLabel.CENTER);
 		skill8.setHorizontalAlignment(JLabel.CENTER);
-		
+
 		totalskill.add(skill);
 		totalskill.add(skill1);
 		totalskill.add(skill2);
@@ -116,7 +109,7 @@ class ListFrame extends JFrame implements ActionListener{
 		totalskill.add(skill6);
 		totalskill.add(skill7);
 		totalskill.add(skill8);
-				
+
 		JPanel totallist = new JPanel(new GridLayout(1,9));
 		String id = infomg.id;
 		savetable(id,"복싱",model);
@@ -128,7 +121,7 @@ class ListFrame extends JFrame implements ActionListener{
 		savetable(id,"카포에라",model6);
 		savetable(id,"유도",model7);
 		savetable(id,"우슈",model8);
-		
+
 		settable(table);
 		settable(table1);
 		settable(table2);
@@ -138,7 +131,7 @@ class ListFrame extends JFrame implements ActionListener{
 		settable(table6);
 		settable(table7);
 		settable(table8);
- 
+
 		pan.add(table);
 		pan1.add(table1);
 		pan2.add(table2);
@@ -148,7 +141,7 @@ class ListFrame extends JFrame implements ActionListener{
 		pan6.add(table6);
 		pan7.add(table7);
 		pan8.add(table8);
-		
+
 		totallist.add(pan);
 		totallist.add(pan1);
 		totallist.add(pan2);
@@ -158,25 +151,25 @@ class ListFrame extends JFrame implements ActionListener{
 		totallist.add(pan6);
 		totallist.add(pan7);
 		totallist.add(pan8);
-		
-		
+
+
 		//확인 버튼
 		JPanel okp = new JPanel();
 		ok = new JButton("확인");
 		ok.addActionListener(this);
 		okp.add(ok);
-		 
+
 		add("North", totalskill);
 		add("Center", totallist);
 		add("South", okp);
 		setSize(1000,400);
-		setVisible(true);	
+		setVisible(true);
 	}
-	
+
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == ok){
 			dispose();
 		}
 	}
-	
+
 }

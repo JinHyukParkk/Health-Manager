@@ -1,10 +1,3 @@
-/*
- * 과목 : 포로그램설계방법론
- * 전공 : 컴퓨터 공학과
- * 학번 : 2012036837
- * 수업 : 월요일 2시 30분
- * 이름 : 박진혁
- */
 import java.io.Serializable;
 
 
@@ -14,7 +7,7 @@ public class Health implements Serializable{
 	String height;				//회원의 키
 	String weight;				//회원의 몸무게
 	String skill;				//회원의 무술
-	
+
 	public Health(String id, String name,String height,String weight,String skill){
 		this.id = id;
 		this.name = name;
@@ -44,5 +37,5 @@ public class Health implements Serializable{
 	public String get_skill() {
 		return skill;
 	}
-	
+
 }

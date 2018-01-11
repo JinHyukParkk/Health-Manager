@@ -1,10 +1,3 @@
-/*
- * 과목 : 포로그램설계방법론
- * 전공 : 컴퓨터 공학과
- * 학번 : 2012036837
- * 수업 : 월요일 2시 30분
- * 이름 : 박진혁
- */
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -24,7 +17,7 @@ import javax.swing.border.Border;
 
 
 public class Exercise extends JFrame implements ActionListener{
-	JTextField tfheight;		//무술 등록창의 키 텍스트 필드 
+	JTextField tfheight;		//무술 등록창의 키 텍스트 필드
 	JTextField tfweight;		//무술 등록창의 몸무게 텍스트 필드
 	JRadioButton boxing;		//무술 등록창의 복싱 라디오 버튼
 	JRadioButton muatie;		//무술 등록창의 무에타이 라디오 버튼
@@ -43,7 +36,7 @@ public class Exercise extends JFrame implements ActionListener{
 	String height = null;		//Health 에 회원 키 저장
 	String weight = null;		//Health 에 회원 몸무게 저장
 	String skill = null;		//Health 에 회원 무술 저장
-	
+
 	public Exercise(InfoManager tempinfo,String id, String name){
 		setTitle("Martial Arts");
 		info = tempinfo;
@@ -73,7 +66,7 @@ public class Exercise extends JFrame implements ActionListener{
 		weightp.add(tfweight);
 		bodyp.add(heightp);
 		bodyp.add(weightp);
-		
+
 		JPanel artp = new JPanel(new BorderLayout());
 		Border skillb=BorderFactory.createTitledBorder(border, "무술");
 		artp.setBorder(skillb);
@@ -99,7 +92,7 @@ public class Exercise extends JFrame implements ActionListener{
 		artgroup.add(kapoara);
 		artgroup.add(youdo);
 		artgroup.add(yuswu);
-		
+
 		artkind.add(boxing);
 		artkind.add(muatie);
 		artkind.add(jujitsu);
@@ -109,7 +102,7 @@ public class Exercise extends JFrame implements ActionListener{
 		artkind.add(kapoara);
 		artkind.add(youdo);
 		artkind.add(yuswu);
-		
+
 		if(skill == null){
 		}else{
 			if(skill.equals("복싱")){
@@ -132,7 +125,7 @@ public class Exercise extends JFrame implements ActionListener{
 		    	 yuswu.setSelected(true);
 		     }
 		}
-		
+
 		artp.add("North",top);
 		artp.add("Center", artkind);
 		//확인 취소,
@@ -147,12 +140,12 @@ public class Exercise extends JFrame implements ActionListener{
 		cancelp.add(cancel);
 		but.add(okp);
 		but.add(cancel);
-		
+
 		total.add("North",bodyp);
 		total.add("Center",artp);
 		total.add("South",but);
 		add(total);
-		
+
 		setSize(300,500);
 		setVisible(true);
 	}
@@ -206,10 +199,10 @@ public class Exercise extends JFrame implements ActionListener{
 				tfweight.requestFocus();
 				return;
 			}
-			
+
 			String arts = null;
 			arts = selectedArts();
-			
+
 			boolean is = true;
 			int search = 0;
 			for(int i =0; i<info.heallist.size(); i++){

@@ -1,10 +1,3 @@
-/*
- * 과목 : 포로그램설계방법론
- * 전공 : 컴퓨터 공학과
- * 학번 : 2012036837
- * 수업 : 월요일 2시 30분
- * 이름 : 박진혁
- */
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Choice;
@@ -29,7 +22,7 @@ import javax.swing.JTextField;
 
 class AddFrame extends JFrame implements ActionListener{            //등록
 	JTextField tfName;					//회원 등록 창의 이름 텍스트필드
-	JTextField tfYear,tfMonth,tfDate;	//회원 등록 창의 생년월일 텍스트 필드 
+	JTextField tfYear,tfMonth,tfDate;	//회원 등록 창의 생년월일 텍스트 필드
 	JTextField tfAddress;				//회원 등록 창의 주소 텍스트 필드
 	JTextField tfTel1,tfTel2,tfTel3;	//회원 등록 창의 휴대폰번호 텍스트 필드
 	JTextField tfschool,tfgrade;		//회원 등록 창의 학교, 학년 텍스트 필드
@@ -40,7 +33,7 @@ class AddFrame extends JFrame implements ActionListener{            //등록
 	CardLayout cardLayout;				//회원 등록 창의 직업에 따른 텍스트 필드 변화를 위한 카드레이아웃
 	Container pane;						//카드레이아웃을 하기 위한 컨테이너
 	JPanel jobkind;						//카드레이아웃을 하는 판넬
-	JRadioButton rbMan,rbWoman;			//성별 구분 라디오 버튼					
+	JRadioButton rbMan,rbWoman;			//성별 구분 라디오 버튼
 	JRadioButton rbA,rbB,rbO,rbAB;		//혈액형 구분 라디오 버튼
 	JComboBox cbJob;					//직업 선택
 	JButton btnInsert;					//회원 등록 창의 등록 버튼
@@ -58,9 +51,9 @@ class AddFrame extends JFrame implements ActionListener{            //등록
 	private String grade = null;
 	private String company = null;
 	private String level = null;
-	private String kind = null;			//선택한 직업 저장		
-	InfoManager infomg;					//infolist에 저장하기 위한 메니저		
-	
+	private String kind = null;			//선택한 직업 저장
+	InfoManager infomg;					//infolist에 저장하기 위한 메니저
+
 	public AddFrame(InfoManager temp_infomg){   //등록GUI
 		infomg = temp_infomg;
 		id = infomg.get_id();
@@ -93,7 +86,7 @@ class AddFrame extends JFrame implements ActionListener{            //등록
 		JLabel bTel = new JLabel("전화 :");
 		JPanel pTel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		tfTel1 = new JTextField(6);
-		tfTel2 = new JTextField(6);    
+		tfTel2 = new JTextField(6);
 		tfTel3 = new JTextField(6);
 		pTel.add(tfTel1);
 		pTel.add(new JLabel(" - "));
@@ -116,7 +109,7 @@ class AddFrame extends JFrame implements ActionListener{            //등록
 		group.add(rbMan);
 		group.add(rbWoman);
 		pGender.add(rbMan);
-		pGender.add(rbWoman);      
+		pGender.add(rbWoman);
 		gbAdd(bGender, 0,5,1,1);
 		gbAdd(pGender,1,5,3,1);
 		//혈액형
@@ -153,7 +146,7 @@ class AddFrame extends JFrame implements ActionListener{            //등록
 		gbAdd(jobkind,0,8,4,1);
 		JPanel blank = new JPanel();
 		jobkind.add("---",blank);
-		
+
 		//하는일
 		JLabel some = new JLabel("하는일 : ");
 		sometext = new JTextField(20);
@@ -200,7 +193,7 @@ class AddFrame extends JFrame implements ActionListener{            //등록
 		pButton.add(btnInsert);
 		pButton.add(cancel);
 		gbAdd(pButton,0,10,4,1);
-		
+
 		setSize(400,400);
 		setVisible(true);
 	}
@@ -226,7 +219,7 @@ class AddFrame extends JFrame implements ActionListener{            //등록
 						JOptionPane.ERROR_MESSAGE);
 				return true;
 			}
-		} 
+		}
 		return false;
 	}
 	public boolean range(String text){			//String이 숫자인지 확인하는 메소드
