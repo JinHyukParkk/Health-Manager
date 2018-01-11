@@ -531,10 +531,4 @@ public class InfoManager extends JFrame implements ActionListener{
     		}catch(IOException ioe){}
     	}// finally
     	}
-
-    public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		new InfoManager("무술센터 회원정보관리 프로그램");
-
-	}
 }
